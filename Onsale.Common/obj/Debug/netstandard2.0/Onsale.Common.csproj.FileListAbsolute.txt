@@ -16,12 +16,3 @@ C:\Projects5\OnSale\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.csproj.
 C:\Projects5\OnSale\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.dll
 C:\Projects5\OnSale\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.pdb
 C:\Projects5\OnSale\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.csprojAssemblyReference.cache
-C:\Projects\OnSale2020\Onsale.Common\bin\Debug\netstandard2.0\Onsale.Common.deps.json
-C:\Projects\OnSale2020\Onsale.Common\bin\Debug\netstandard2.0\Onsale.Common.dll
-C:\Projects\OnSale2020\Onsale.Common\bin\Debug\netstandard2.0\Onsale.Common.pdb
-C:\Projects\OnSale2020\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.AssemblyInfoInputs.cache
-C:\Projects\OnSale2020\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.AssemblyInfo.cs
-C:\Projects\OnSale2020\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.csproj.CoreCompileInputs.cache
-C:\Projects\OnSale2020\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.dll
-C:\Projects\OnSale2020\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.pdb
-C:\Projects\OnSale2020\Onsale.Common\obj\Debug\netstandard2.0\Onsale.Common.csproj.AssemblyReference.cache

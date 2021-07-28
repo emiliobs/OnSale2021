@@ -1,7 +1,11 @@
+using Azure.Core.Extensions;
+using Azure.Storage.Blobs;
+using Azure.Storage.Queues;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,12 +13,8 @@ using Microsoft.IdentityModel.Tokens;
 using OnSale.Web.Data;
 using OnSale.Web.Data.Entities;
 using OnSale.Web.Helpers;
-using System.Text;
-using Microsoft.Extensions.Azure;
-using Azure.Storage.Queues;
-using Azure.Storage.Blobs;
-using Azure.Core.Extensions;
 using System;
+using System.Text;
 
 namespace OnSale.Web
 {
