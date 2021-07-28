@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "zhK90mf/LdZADa06AmyEkb8hgO3kQw3A5yv9W0Geven32/4si/1UNECCrMVl565pveukN+gkCuP4F6dKHtDv7Q==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\OnSale2020\\OnSaleCommon\\OnSaleCommon.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emilio\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Emilio\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Emilio\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Emilio\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

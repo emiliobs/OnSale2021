@@ -1,0 +1,4 @@
+C:\Projects4\OnSale2020\OnSaleCommon\obj\Debug\netstandard2.0\OnSaleCommon.csprojAssemblyReference.cache
+C:\Projects4\OnSale2020\OnSaleCommon\obj\Debug\netstandard2.0\OnSaleCommon.AssemblyInfoInputs.cache
+C:\Projects4\OnSale2020\OnSaleCommon\obj\Debug\netstandard2.0\OnSaleCommon.AssemblyInfo.cs
+C:\Projects4\OnSale2020\OnSaleCommon\obj\Debug\netstandard2.0\OnSaleCommon.csproj.CoreCompileInputs.cache
