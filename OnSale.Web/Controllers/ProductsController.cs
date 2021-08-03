@@ -31,7 +31,11 @@ namespace OnSale.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.Include(p => p.Category).Include(p => p.ProductImages).ToListAsync());
+            return View(await _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.ProductImages)
+                .Include(p => p.Qualifications)
+                .ToListAsync());
         }
 
         public IActionResult Create()
@@ -189,8 +193,12 @@ namespace OnSale.Web.Controllers
                 return NotFound();
             }
 
-            Product product = await _context.Products.Include(c => c.Category).Include(c => c.ProductImages)
-                                                 .FirstOrDefaultAsync(m => m.Id == id);
+            Product product = await _context.Products
+                .Include(c => c.Category)
+                .Include(c => c.ProductImages)
+                .Include(c => c.Qualifications)
+                .ThenInclude(q => q.User)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
                 return NotFound();
