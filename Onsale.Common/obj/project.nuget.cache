@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "cYHd2a7hRDPMhLJ/TUyMdD9J22vljI1xO4YVKvwO0rG9vzFxRM/B7XzNk+dIW0v3vAdfnc9fb9oDiu2+s06SaQ==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\OnSale2020\\Onsale.Common\\OnSale.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emilio\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Emilio\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Emilio\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Emilio\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\Emilio\\.nuget\\packages\\xam.plugins.settings\\3.1.1\\xam.plugins.settings.3.1.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

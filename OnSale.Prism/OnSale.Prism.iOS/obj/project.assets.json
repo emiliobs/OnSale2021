@@ -344,7 +344,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Onsale.Common/1.0.0": {
+      "OnSale.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -354,17 +354,17 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         }
       },
       "OnSale.Prism/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Onsale.Common": "1.0.0",
+          "OnSale.Common": "1.0.0",
           "Prism.DryIoc.Forms": "8.0.0.1909",
           "Syncfusion.Xamarin.Core": "19.1.0.63",
           "Syncfusion.Xamarin.SfBusyIndicator": "18.4.0.48",
@@ -724,7 +724,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Onsale.Common/1.0.0": {
+      "OnSale.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -734,17 +734,17 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         }
       },
       "OnSale.Prism/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Onsale.Common": "1.0.0",
+          "OnSale.Common": "1.0.0",
           "Prism.DryIoc.Forms": "8.0.0.1909",
           "Syncfusion.Xamarin.Core": "19.1.0.63",
           "Syncfusion.Xamarin.SfBusyIndicator": "18.4.0.48",
@@ -1104,7 +1104,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Onsale.Common/1.0.0": {
+      "OnSale.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1114,17 +1114,17 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         }
       },
       "OnSale.Prism/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Onsale.Common": "1.0.0",
+          "OnSale.Common": "1.0.0",
           "Prism.DryIoc.Forms": "8.0.0.1909",
           "Syncfusion.Xamarin.Core": "19.1.0.63",
           "Syncfusion.Xamarin.SfBusyIndicator": "18.4.0.48",
@@ -1484,7 +1484,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Onsale.Common/1.0.0": {
+      "OnSale.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1494,17 +1494,17 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         }
       },
       "OnSale.Prism/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Onsale.Common": "1.0.0",
+          "OnSale.Common": "1.0.0",
           "Prism.DryIoc.Forms": "8.0.0.1909",
           "Syncfusion.Xamarin.Core": "19.1.0.63",
           "Syncfusion.Xamarin.SfBusyIndicator": "18.4.0.48",
@@ -2428,10 +2428,10 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Onsale.Common/1.0.0": {
+    "OnSale.Common/1.0.0": {
       "type": "project",
-      "path": "../../Onsale.Common/Onsale.Common.csproj",
-      "msbuildProject": "../../Onsale.Common/Onsale.Common.csproj"
+      "path": "../../Onsale.Common/OnSale.Common.csproj",
+      "msbuildProject": "../../Onsale.Common/OnSale.Common.csproj"
     },
     "OnSale.Prism/1.0.0": {
       "type": "project",
@@ -2441,8 +2441,8 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
+      "OnSale.Common >= 1.0.0",
       "OnSale.Prism >= 1.0.0",
-      "Onsale.Common >= 1.0.0",
       "Prism.DryIoc.Forms >= 8.0.0.1909",
       "Syncfusion.Xamarin.Core >= 19.1.0.63",
       "Syncfusion.Xamarin.SfBusyIndicator >= 18.4.0.35",
@@ -2487,8 +2487,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Projects\\OnSale2020\\Onsale.Common\\Onsale.Common.csproj": {
-              "projectPath": "C:\\Projects\\OnSale2020\\Onsale.Common\\Onsale.Common.csproj"
+            "C:\\Projects\\OnSale2020\\Onsale.Common\\OnSale.Common.csproj": {
+              "projectPath": "C:\\Projects\\OnSale2020\\Onsale.Common\\OnSale.Common.csproj"
             },
             "C:\\Projects\\OnSale2020\\OnSale.Prism\\OnSale.Prism\\OnSale.Prism.csproj": {
               "projectPath": "C:\\Projects\\OnSale2020\\OnSale.Prism\\OnSale.Prism\\OnSale.Prism.csproj"

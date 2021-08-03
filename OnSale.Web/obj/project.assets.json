@@ -3311,7 +3311,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Onsale.Common/1.0.0": {
+      "OnSale.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -3321,10 +3321,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Onsale.Common.dll": {}
+          "bin/placeholder/OnSale.Common.dll": {}
         }
       }
     }
@@ -10384,10 +10384,10 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Onsale.Common/1.0.0": {
+    "OnSale.Common/1.0.0": {
       "type": "project",
-      "path": "../Onsale.Common/Onsale.Common.csproj",
-      "msbuildProject": "../Onsale.Common/Onsale.Common.csproj"
+      "path": "../Onsale.Common/OnSale.Common.csproj",
+      "msbuildProject": "../Onsale.Common/OnSale.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10405,7 +10405,7 @@
       "Microsoft.Extensions.Azure >= 1.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "Newtonsoft.Json >= 12.0.3",
-      "Onsale.Common >= 1.0.0",
+      "OnSale.Common >= 1.0.0",
       "WindowsAzure.Storage >= 9.3.3",
       "bootstrap >= 5.0.0-beta1"
     ]

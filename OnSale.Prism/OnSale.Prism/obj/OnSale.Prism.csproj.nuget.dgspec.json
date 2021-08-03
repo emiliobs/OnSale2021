@@ -4,12 +4,12 @@
     "C:\\Projects\\OnSale2020\\OnSale.Prism\\OnSale.Prism\\OnSale.Prism.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\OnSale2020\\Onsale.Common\\Onsale.Common.csproj": {
+    "C:\\Projects\\OnSale2020\\Onsale.Common\\OnSale.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\OnSale2020\\Onsale.Common\\Onsale.Common.csproj",
-        "projectName": "Onsale.Common",
-        "projectPath": "C:\\Projects\\OnSale2020\\Onsale.Common\\Onsale.Common.csproj",
+        "projectUniqueName": "C:\\Projects\\OnSale2020\\Onsale.Common\\OnSale.Common.csproj",
+        "projectName": "OnSale.Common",
+        "projectPath": "C:\\Projects\\OnSale2020\\Onsale.Common\\OnSale.Common.csproj",
         "packagesPath": "C:\\Users\\Emilio\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\OnSale2020\\Onsale.Common\\obj\\",
         "projectStyle": "PackageReference",

@@ -1,7 +1,7 @@
-﻿using Onsale.Common.Entities;
-using Onsale.Common.Responses;
+﻿using Onsale.Common.Responses;
 using Onsale.Common.Services;
 using Onsale.Prism.Helpers;
+using OnSale.Common.Responses;
 using OnSale.Prism.ItemViewModel;
 using Prism.Commands;
 using Prism.Navigation;
@@ -19,7 +19,7 @@ namespace OnSale.Prism.ViewModels
         private bool _isRunning;
         private ObservableCollection<ProductItemViewModel> _products;
         private string _search;
-        private List<Product> _listProducts;
+        private List<ProductResponse> _listProducts;
         private DelegateCommand _searchCommand;
 
         public ProductsPageViewModel(INavigationService navigationService, IApiService apiService) : base(navigationService)
@@ -69,14 +69,14 @@ namespace OnSale.Prism.ViewModels
 
             IsRunning = true;
             string urlApi = App.Current.Resources["UrlAPI"].ToString();
-            Response response = await _apiService.GetListAsync<Product>(urlApi, "/api", "/Products");
+            Response response = await _apiService.GetListAsync<ProductResponse>(urlApi, "/api", "/Products");
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 
-            _listProducts = (List<Product>)response.Result;
+            _listProducts = (List<ProductResponse>)response.Result;
             ShowProducts();
 
             IsRunning = false;

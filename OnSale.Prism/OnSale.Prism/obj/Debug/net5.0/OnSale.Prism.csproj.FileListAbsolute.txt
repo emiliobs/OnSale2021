@@ -1,0 +1,17 @@
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.csproj.AssemblyReference.cache
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.Resources.Resource.resources
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.Resources.Resource.es.resources
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.csproj.GenerateResource.cache
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\App.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\LoginPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\MainPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\ModifyUserPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\OnSaleMasterDetailPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\ProductDetailPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\ProductsPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\ShowCarPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\Views\ShowHistoryPage.xaml.g.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.AssemblyInfoInputs.cache
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.AssemblyInfo.cs
+C:\Projects\OnSale2020\OnSale.Prism\OnSale.Prism\obj\Debug\net5.0\OnSale.Prism.csproj.CoreCompileInputs.cache
