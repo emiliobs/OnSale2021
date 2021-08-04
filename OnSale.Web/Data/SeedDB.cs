@@ -1,8 +1,12 @@
-﻿using Onsale.Common.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Onsale.Common.Entities;
 using Onsale.Common.Enums;
+using Onsale.Common.Services;
 using OnSale.Web.Data.Entities;
 using OnSale.Web.Helpers;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,11 +16,15 @@ namespace OnSale.Web.Data
     {
         private readonly DataContext _context;
         private readonly IUserHelper _userHelper;
+        private readonly IBlobHelper _blobHelper;
+        private readonly Random _random;
 
-        public SeedDB(DataContext context, IUserHelper userHelper)
+        public SeedDB(DataContext context, IUserHelper userHelper, IBlobHelper blobHelper)
         {
             _context = context;
-            this._userHelper = userHelper;
+            _userHelper = userHelper;
+            _blobHelper = blobHelper;
+            _random = new Random();
         }
 
         public async Task SeedAsync()
@@ -24,46 +32,129 @@ namespace OnSale.Web.Data
             await _context.Database.EnsureCreatedAsync();
             await CheckCountriesAsync();
             await CheckRolesAsync();
-            await CheckUserAsync("55555", "Emilio", "Barrera", "barrera_emilio@hotmail.com", "07907951284", "Allent Street London",
-                                  UserType.Admin);
+            await CheckUserAsync("1010", "Emilio", "Barrera", "barrera_emilio@hotmail.com", "322 311 4620", "Calle Luna Calle Sol", UserType.Admin);
+            await CheckCategoriesAsync();
+            await CheckProductsAsync();
         }
 
-        private async Task<User> CheckUserAsync(string document, string firstName, string lastName, string email, string phone, string address,
-                                    UserType userType)
+        private async Task CheckProductsAsync()
         {
-            var user = await _userHelper.GetUserAsync(email);
-
-            if (user == null)
+            if (!_context.Products.Any())
             {
-                user = new User
-                {
-                    Document = document,
-                    Email = email,
-                    FirstName = firstName,
-                    LastName = lastName,
-                    Address = address,
-                    City = _context.Cities.FirstOrDefault(),
-                    UserType = userType,
-                    UserName = email,
-                    PhoneNumber = phone,
+                User user = await _userHelper.GetUserAsync("barrera_emilio@hotmail.com");
+                Category mascotas = await _context.Categories.FirstOrDefaultAsync(c => c.Name == "Mascotas");
+                Category ropa = await _context.Categories.FirstOrDefaultAsync(c => c.Name == "Ropa");
+                Category tecnologia = await _context.Categories.FirstOrDefaultAsync(c => c.Name == "Tecnología");
+                string lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida, nunc vel tristique cursus, velit nibh pulvinar enim, non pulvinar lorem leo eget felis. Proin suscipit dignissim nisl, at elementum justo laoreet sed. In tortor nibh, auctor quis est gravida, blandit elementum nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer placerat nisi dui, id rutrum nisi viverra at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque sodales sollicitudin tempor. Fusce volutpat, purus sit amet placerat gravida, est magna gravida risus, a ultricies augue magna vel dolor. Fusce egestas venenatis velit, a ultrices purus aliquet sed. Morbi lacinia purus sit amet nisi vulputate mollis. Praesent in volutpat tortor. Etiam ac enim id ligula rutrum semper. Sed mattis erat sed condimentum congue. Vestibulum consequat tristique consectetur. Nunc in lorem in sapien vestibulum aliquet a vel leo.";
+                await AddProductAsync(mascotas, lorem, "Bulldog Frances", 2500000M, new string[] { "Bulldog1", "Bulldog2", "Bulldog3", "Bulldog4" }, user);
+                await AddProductAsync(ropa, lorem, "Buso GAP Hombre", 85000M, new string[] { "BusoGAP1", "BusoGAP2" }, user);
+                await AddProductAsync(tecnologia, lorem, "iPhone 11", 3500000M, new string[] { "iPhone1", "iPhone2", "iPhone3", "iPhone4", "iPhone5" }, user);
+                await AddProductAsync(tecnologia, lorem, "iWatch \"42", 2100000M, new string[] { "iWatch" }, user);
+                await AddProductAsync(ropa, lorem, "Tennis Adidas", 250000M, new string[] { "Adidas" }, user);
+                await AddProductAsync(mascotas, lorem, "Collie", 350000M, new string[] { "Collie1", "Collie2", "Collie3", "Collie4", "Collie5" }, user);
+                await AddProductAsync(tecnologia, lorem, "MacBook Pro 16\" 1TB", 12000000M, new string[] { "MacBookPro1", "MacBookPro2", "MacBookPro3", "MacBookPro4" }, user);
+                await AddProductAsync(ropa, lorem, "Sudadera Mujer", 95000M, new string[] { "Sudadera1", "Sudadera2", "Sudadera3", "Sudadera4", "Sudadera5" }, user);
+                await _context.SaveChangesAsync();
+            }
+        }
 
-                };
+        private async Task AddProductAsync(Category category, string description, string name, decimal price, string[] images, User user)
+        {
+            Product product = new Product
+            {
+                Category = category,
+                Description = description,
+                IsActive = true,
+                Name = name,
+                Price = price,
+                ProductImages = new List<ProductImage>(),
+                Qualifications = GetRandomQualifications(description, user)
+            };
 
-                await _userHelper.AddUserAsync(user, "Eabs123.");
-                await _userHelper.AddUserToRoleAsync(user, userType.ToString());
-
-                //Aqui confirmo el usuario creado con token(este por que es el superusuario)
-                var token = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
-                await _userHelper.ConfirmEmailAsync(user, token);
+            foreach (string image in images)
+            {
+                string path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\images", $"{image}.png");
+                Guid imageId = await _blobHelper.UploadBlobAsync(path, "products");
+                product.ProductImages.Add(new ProductImage { ImageId = imageId });
             }
 
-            return user;
+            _context.Products.Add(product);
+        }
+
+        private ICollection<Qualification> GetRandomQualifications(string description, User user)
+        {
+            List<Qualification> qualifications = new List<Qualification>();
+            for (int i = 0; i < 10; i++)
+            {
+                qualifications.Add(new Qualification
+                {
+                    Date = DateTime.UtcNow,
+                    Remarks = description,
+                    Score = _random.Next(1, 5),
+                    User = user
+                });
+            }
+
+            return qualifications;
+        }
+
+        private async Task CheckCategoriesAsync()
+        {
+            if (!_context.Categories.Any())
+            {
+                await AddCategoryAsync("Ropa");
+                await AddCategoryAsync("Tecnología");
+                await AddCategoryAsync("Mascotas");
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        private async Task AddCategoryAsync(string name)
+        {
+            string path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\images", $"{name}.png");
+            Guid imageId = await _blobHelper.UploadBlobAsync(path, "categories");
+            _context.Categories.Add(new Category { Name = name, ImageId = imageId });
         }
 
         private async Task CheckRolesAsync()
         {
             await _userHelper.CheckRoleAsync(UserType.Admin.ToString());
             await _userHelper.CheckRoleAsync(UserType.User.ToString());
+        }
+
+        private async Task<User> CheckUserAsync(
+            string document,
+            string firstName,
+            string lastName,
+            string email,
+            string phone,
+            string address,
+            UserType userType)
+        {
+            User user = await _userHelper.GetUserAsync(email);
+            if (user == null)
+            {
+                user = new User
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Email = email,
+                    UserName = email,
+                    PhoneNumber = phone,
+                    Address = address,
+                    Document = document,
+                    City = _context.Cities.FirstOrDefault(),
+                    UserType = userType
+                };
+
+                await _userHelper.AddUserAsync(user, "Eabs123.");
+                await _userHelper.AddUserToRoleAsync(user, userType.ToString());
+
+                string token = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
+                await _userHelper.ConfirmEmailAsync(user, token);
+            }
+
+            return user;
         }
 
         private async Task CheckCountriesAsync()
@@ -74,68 +165,65 @@ namespace OnSale.Web.Data
                 {
                     Name = "Colombia",
                     Departments = new List<Department>
-                {
-                    new Department
                     {
-                        Name = "Antioquia",
-                        Cities = new List<City>
+                        new Department
                         {
-                            new City { Name = "Medellín" },
-                            new City { Name = "Envigado" },
-                            new City { Name = "Itagüí" }
-                        }
-                    },
-                    new Department
-                    {
-                        Name = "Cundinamarca",
-                        Cities = new List<City>
+                            Name = "Antioquia",
+                            Cities = new List<City>
+                            {
+                                new City { Name = "Medellín" },
+                                new City { Name = "Envigado" },
+                                new City { Name = "Itagüí" }
+                            }
+                        },
+                        new Department
                         {
-                            new City { Name = "Bogotá" }
-                        }
-                    },
-                    new Department
-                    {
-                        Name = "Valle del Cauca",
-                        Cities = new List<City>
+                            Name = "Bogotá",
+                            Cities = new List<City>
+                            {
+                                new City { Name = "Bogotá" }
+                            }
+                        },
+                        new Department
                         {
-                            new City { Name = "Calí" },
-                            new City { Name = "Buenaventura" },
-                            new City { Name = "Palmira" }
+                            Name = "Valle del Cauca",
+                            Cities = new List<City>
+                            {
+                                new City { Name = "Calí" },
+                                new City { Name = "Buenaventura" },
+                                new City { Name = "Palmira" }
+                            }
                         }
                     }
-                }
                 });
-
                 _context.Countries.Add(new Country
                 {
                     Name = "USA",
                     Departments = new List<Department>
-                {
-                    new Department
                     {
-                        Name = "California",
-                        Cities = new List<City>
+                        new Department
                         {
-                            new City { Name = "Los Angeles" },
-                            new City { Name = "San Diego" },
-                            new City { Name = "San Francisco" }
-                        }
-                    },
-                    new Department
-                    {
-                        Name = "Illinois",
-                        Cities = new List<City>
+                            Name = "California",
+                            Cities = new List<City>
+                            {
+                                new City { Name = "Los Angeles" },
+                                new City { Name = "San Diego" },
+                                new City { Name = "San Francisco" }
+                            }
+                        },
+                        new Department
                         {
-                            new City { Name = "Chicago" },
-                            new City { Name = "Springfield" }
+                            Name = "Illinois",
+                            Cities = new List<City>
+                            {
+                                new City { Name = "Chicago" },
+                                new City { Name = "Springfield" }
+                            }
                         }
                     }
-                }
                 });
-
+                await _context.SaveChangesAsync();
             }
-
-            await _context.SaveChangesAsync();
         }
     }
 }
