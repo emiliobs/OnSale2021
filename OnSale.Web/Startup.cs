@@ -15,6 +15,7 @@ using OnSale.Web.Data.Entities;
 using OnSale.Web.Helpers;
 using System;
 using System.Text;
+using Vereyon.Web;
 
 namespace OnSale.Web
 {
@@ -85,6 +86,7 @@ namespace OnSale.Web
                 builder.AddBlobServiceClient(Configuration["Blob:ConnectionString:blob"], preferMsi: true);
                 builder.AddQueueServiceClient(Configuration["Blob:ConnectionString:queue"], preferMsi: true);
             });
+            services.AddFlashMessage();
 
         }
 

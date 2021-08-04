@@ -27,7 +27,7 @@ using OnSale.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19133c009ef0cc334c1c5cbb3d9fdc70ccf5c4af", @"/Views/Categories/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99aa12d1b2dd6074e4fde3bebb74ac73794a028d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4f4543f7639545bb76a76fc2b76f886a1f9bf42c", @"/Views/_ViewImports.cshtml")]
     public class Views_Categories_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<OnSale.Web.Models.CategoryViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

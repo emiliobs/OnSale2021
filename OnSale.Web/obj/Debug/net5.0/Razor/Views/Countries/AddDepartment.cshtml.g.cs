@@ -27,7 +27,7 @@ using OnSale.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4ca47f77461c21526d69bceb7c544eea79ce1854", @"/Views/Countries/AddDepartment.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99aa12d1b2dd6074e4fde3bebb74ac73794a028d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4f4543f7639545bb76a76fc2b76f886a1f9bf42c", @"/Views/_ViewImports.cshtml")]
     public class Views_Countries_AddDepartment : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Onsale.Common.Entities.Department>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

@@ -27,7 +27,7 @@ using OnSale.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"af3ce635630a26b1c82f1a02b36bea97207971bc", @"/Views/Countries/DetailsDepartment.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99aa12d1b2dd6074e4fde3bebb74ac73794a028d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4f4543f7639545bb76a76fc2b76f886a1f9bf42c", @"/Views/_ViewImports.cshtml")]
     public class Views_Countries_DetailsDepartment : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Onsale.Common.Entities.Department>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "AddCity", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

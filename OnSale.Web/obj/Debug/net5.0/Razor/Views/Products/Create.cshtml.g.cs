@@ -27,7 +27,7 @@ using OnSale.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"15676f4cc235f0fa5378e1e01d1e177bce0443d7", @"/Views/Products/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99aa12d1b2dd6074e4fde3bebb74ac73794a028d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4f4543f7639545bb76a76fc2b76f886a1f9bf42c", @"/Views/_ViewImports.cshtml")]
     public class Views_Products_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<OnSale.Web.Models.ProductViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

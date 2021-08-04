@@ -6,6 +6,7 @@ using OnSale.Web.Helpers;
 using OnSale.Web.Models;
 using System;
 using System.Threading.Tasks;
+using Vereyon.Web;
 
 namespace OnSale.Web.Controllers
 {
@@ -15,12 +16,14 @@ namespace OnSale.Web.Controllers
         private readonly DataContext _dataContext;
         private readonly IBlobHelper _blobHelper;
         private readonly IConverterHelper _converterHelper;
+        private readonly IFlashMessage _flashMessage;
 
-        public CategoriesController(DataContext dataContext, IBlobHelper blobHelper, IConverterHelper converterHelper)
+        public CategoriesController(DataContext dataContext, IBlobHelper blobHelper, IConverterHelper converterHelper, IFlashMessage flashMessage)
         {
             _dataContext = dataContext;
             _blobHelper = blobHelper;
             _converterHelper = converterHelper;
+            _flashMessage = flashMessage;
         }
 
         public async Task<IActionResult> Index()
@@ -83,13 +86,13 @@ namespace OnSale.Web.Controllers
                 return NotFound();
             }
 
-            var category = await _dataContext.Categories.FindAsync(id);
+            Onsale.Common.Entities.Category category = await _dataContext.Categories.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
             }
 
-            var model = _converterHelper.ToCategoryViewModel(category);
+            CategoryViewModel model = _converterHelper.ToCategoryViewModel(category);
             return View(model);
         }
 
@@ -99,7 +102,7 @@ namespace OnSale.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var imageId = Guid.Empty;
+                Guid imageId = Guid.Empty;
 
                 if (model.ImageId != null)
                 {
@@ -109,7 +112,7 @@ namespace OnSale.Web.Controllers
 
                 try
                 {
-                    var category = _converterHelper.ToCatogory(model, imageId, false);
+                    Onsale.Common.Entities.Category category = _converterHelper.ToCatogory(model, imageId, false);
                     _dataContext.Update(category);
                     await _dataContext.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -142,7 +145,7 @@ namespace OnSale.Web.Controllers
                 return NotFound();
             }
 
-            var category = await _dataContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
+            Onsale.Common.Entities.Category category = await _dataContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
             if (category == null)
             {
                 return NotFound();
@@ -152,12 +155,14 @@ namespace OnSale.Web.Controllers
             {
                 _dataContext.Categories.Remove(category);
                 await _dataContext.SaveChangesAsync();
+                _flashMessage.Confirmation("The category was deleted.");
 
             }
-            catch (Exception ex)
+            catch
             {
 
-                ModelState.AddModelError(string.Empty, ex.Message);
+                //ModelState.AddModelError(string.Empty, ex.Message);
+                _flashMessage.Danger("The category can't be delete because it has related records.");
             }
 
             return RedirectToAction(nameof(Index));

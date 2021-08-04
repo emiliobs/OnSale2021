@@ -183,6 +183,10 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Vereyon.Web.FlashMessage": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "WindowsAzure.Storage": {
               "target": "Package",
               "version": "[9.3.3, )"

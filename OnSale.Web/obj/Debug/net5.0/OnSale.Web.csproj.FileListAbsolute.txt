@@ -657,3 +657,8 @@ C:\Projects\OnSale2020\OnSale.Web\bin\Debug\net5.0\Onsale.Common.pdb
 C:\Projects\OnSale2020\OnSale.Web\obj\Debug\net5.0\OnSale.Web.Views.pdb
 C:\Projects\OnSale2020\OnSale.Web\obj\Debug\net5.0\OnSale.Web.csproj.CopyComplete
 C:\Projects\OnSale2020\OnSale.Web\obj\Debug\net5.0\OnSale.Web.genruntimeconfig.cache
+C:\Projects\OnSale2020\OnSale.Web\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Projects\OnSale2020\OnSale.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Projects\OnSale2020\OnSale.Web\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Projects\OnSale2020\OnSale.Web\bin\Debug\net5.0\Vereyon.Web.FlashMessage.dll
+C:\Projects\OnSale2020\OnSale.Web\obj\Debug\net5.0\OnSale.Web.MvcApplicationPartsAssemblyInfo.cs
